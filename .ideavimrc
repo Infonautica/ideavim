@@ -20,6 +20,7 @@ set incsearch
 
 " Enable which-key plugin
 set which-key
+set timeoutlen=5000
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -31,6 +32,9 @@ Plug 'machakann/vim-highlightedyank'
 
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+
+" Easy Motions
+Plug 'easymotion/vim-easymotion'
 
 
 
@@ -100,3 +104,14 @@ let g:WhichKeyDesc_goto_implementation = "<leader>gi Go To Implementation"
 
 nmap <leader>gr <Action>(ShowUsages)
 let g:WhichKeyDesc_goto_references = "<leader>gr Go To References"
+
+
+" Jump to commands
+
+let g:WhichKeyDesc_jump_to = "<leader>j Jump To"
+
+map <leader>jb <Plug>(easymotion-s)
+let g:WhichKeyDesc_jump_to_backwards = "<leader>jb Jump To Backwards"
+
+map <leader>jf <Plug>(easymotion-f)
+let g:WhichKeyDesc_jump_to_forward = "<leader>jf Jump To Forward"
