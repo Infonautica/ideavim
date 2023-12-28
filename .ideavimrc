@@ -1,0 +1,82 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Source your .vimrc
+source ~/.vimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Show relative numbers
+set relativenumber
+
+" Do incremental searching.
+set incsearch
+
+" Enable which-key plugin
+set which-key
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" Jump to the end of the line
+nnoremap <C-e> $
+vnoremap <C-e> $
+
+" Split windows
+map <C-\> <Action>(SplitVertically)
+map <C--> <Action>(SplitHorizontally)
+
+" Navigate splits
+sethandler <C-Left> a:vim
+sethandler <C-Right> a:vim
+sethandler <C-Up> a:vim
+sethandler <C-Down> a:vim
+nnoremap <C-Left> <C-W>h
+nnoremap <C-Right> <C-W>l
+nnoremap <C-Up> <C-W>k
+nnoremap <C-Down> <C-W>j
+
+" Navigate tabs (opened files)
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <A-TAB> :action PreviousTab<CR>
+
+" Zen mode
+map <C-z> <Action>(ToggleZenMode)
+
+" Toggle Terminal
+map <C-t> <Action>(ActivateTerminalToolWindow)
+
+
+
+
+
+" -- Leader commands below --
+
+" Set leader key to be space bar
+let mapleader=" "
+
+" Find commands
+let g:WhichKeyDesc_find = "<leader>f Find"
+
+nmap <leader>ff <Action>(GotoFile)
+let g:WhichKeyDesc_find_file = "<leader>ff Find File"
+
+nmap <leader>fw <Action>(FindInPath)
+let g:WhichKeyDesc_find_word = "<leader>fw Find Word"
+
+nmap <leader>fa <Action>(GotoAction)
+let g:WhichKeyDesc_find_action = "<leader>fa Find Action"
