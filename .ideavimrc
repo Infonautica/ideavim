@@ -65,7 +65,7 @@ nnoremap <TAB> :action NextTab<CR>
 nnoremap <A-TAB> :action PreviousTab<CR>
 
 " Zen mode
-nnoremap <C-z> <Action>(ToggleDistractionFreeMode)
+nmap <C-z> <Action>(ToggleDistractionFreeMode)
 
 " Toggle Terminal
 " map <C-t> <Action>(ActivateTerminalToolWindow)
