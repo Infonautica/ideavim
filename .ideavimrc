@@ -20,7 +20,7 @@ set incsearch
 
 " Enable which-key plugin
 set which-key
-set timeoutlen=5000
+set timeoutlen=60000
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -65,10 +65,21 @@ nnoremap <TAB> :action NextTab<CR>
 nnoremap <A-TAB> :action PreviousTab<CR>
 
 " Zen mode
-map <C-z> <Action>(ToggleDistractionFreeMode)
+nnoremap <C-z> <Action>(ToggleDistractionFreeMode)
 
 " Toggle Terminal
-map <C-t> <Action>(ActivateTerminalToolWindow)
+" map <C-t> <Action>(ActivateTerminalToolWindow)
+
+" system clipboard
+" vmap <leader>yiw "+yiw
+" nmap <leader>yiw "+yiw
+" vmap <leader>y "+y
+" vmap <leader>d "_d
+" nmap <leader>y "+yy
+" nmap <leader>p "+p
+" nmap <leader>P "+P
+" vmap <leader>p "+p
+" vmap <leader>P "+P
 
 
 
@@ -93,25 +104,38 @@ let g:WhichKeyDesc_find_action = "<leader>fa Find Action"
 
 
 " Go to commands
+let g:WhichKeyDesc_goto = "g Go To"
 
-let g:WhichKeyDesc_goto = "<leader>g Go To"
+nmap gd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_goto_definition = "gd Go To Definition"
 
-nmap <leader>gd <Action>(GotoDeclaration)
-let g:WhichKeyDesc_goto_definition = "<leader>gd Go To Definition"
+nmap gi <Action>(GotoImplementation)
+let g:WhichKeyDesc_goto_implementation = "gi Go To Implementation"
 
-nmap <leader>gi <Action>(GotoImplementation)
-let g:WhichKeyDesc_goto_implementation = "<leader>gi Go To Implementation"
-
-nmap <leader>gr <Action>(ShowUsages)
-let g:WhichKeyDesc_goto_references = "<leader>gr Go To References"
+nmap gr <Action>(ShowUsages)
+let g:WhichKeyDesc_goto_references = "gr Go To References"
 
 
 " Jump to commands
 
 let g:WhichKeyDesc_jump_to = "<leader>j Jump To"
 
-map <leader>jb <Plug>(easymotion-s)
+nmap <leader>jb <Plug>(easymotion-s)
 let g:WhichKeyDesc_jump_to_backwards = "<leader>jb Jump To Backwards"
 
-map <leader>jf <Plug>(easymotion-f)
+nmap <leader>jf <Plug>(easymotion-f)
 let g:WhichKeyDesc_jump_to_forward = "<leader>jf Jump To Forward"
+
+
+" Git commands
+let g:WhichKeyDesc_git = "<leader>g Git"
+
+nmap <leader>gp <Action>(Vcs.QuickListPopupAction)
+let g:WhichKeyDesc_git_popup = "<leader>gp Git Popup"
+
+
+" Close commands
+let g:WhichKeyDesc_close = "<leader>x Close"
+
+nmap <leader>xn <Action>(CloseAllNotifications)
+let g:WhichKeyDesc_close_notifications = "<leader>xn Close Notifications"
