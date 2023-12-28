@@ -32,6 +32,12 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
+
+
+
+
+" -- Custom Hot Keys Below --
+
 " Jump to the end of the line
 nnoremap <C-e> $
 vnoremap <C-e> $
@@ -55,7 +61,7 @@ nnoremap <TAB> :action NextTab<CR>
 nnoremap <A-TAB> :action PreviousTab<CR>
 
 " Zen mode
-map <C-z> <Action>(ToggleZenMode)
+map <C-z> <Action>(ToggleDistractionFreeMode)
 
 " Toggle Terminal
 map <C-t> <Action>(ActivateTerminalToolWindow)
@@ -80,3 +86,17 @@ let g:WhichKeyDesc_find_word = "<leader>fw Find Word"
 
 nmap <leader>fa <Action>(GotoAction)
 let g:WhichKeyDesc_find_action = "<leader>fa Find Action"
+
+
+" Go to commands
+
+let g:WhichKeyDesc_goto = "<leader>g Go To"
+
+nmap <leader>gd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_goto_definition = "<leader>gd Go To Definition"
+
+nmap <leader>gi <Action>(GotoImplementation)
+let g:WhichKeyDesc_goto_implementation = "<leader>gi Go To Implementation"
+
+nmap <leader>gr <Action>(ShowUsages)
+let g:WhichKeyDesc_goto_references = "<leader>gr Go To References"
