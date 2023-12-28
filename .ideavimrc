@@ -1,4 +1,4 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
@@ -47,8 +47,10 @@ nnoremap <C-e> $
 vnoremap <C-e> $
 
 " Split windows
-map <C-\> <Action>(SplitVertically)
-map <C--> <Action>(SplitHorizontally)
+nmap <C-\> <Action>(SplitVertically)
+nmap <C--> <Action>(SplitHorizontally)
+nmap <C-=> <Action>(Unsplit)
+nmap <C-m> <Action>(MoveEditorToOppositeTabGroup)
 
 " Navigate splits
 sethandler <C-Left> a:vim
@@ -132,6 +134,12 @@ let g:WhichKeyDesc_git = "<leader>g Git"
 
 nmap <leader>gp <Action>(Vcs.QuickListPopupAction)
 let g:WhichKeyDesc_git_popup = "<leader>gp Git Popup"
+
+nmap <leader>gd <Action>(Compare.SameVersion)
+let g:WhichKeyDesc_git_diff = "<leader>gd Git Diff"
+
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+let g:WhichKeyDesc_git_reset = "<leader>gr Git Reset"
 
 
 " Close commands
