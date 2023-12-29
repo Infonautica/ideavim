@@ -1,4 +1,4 @@
-# ideavim
+# ideavim-config
 
 My configuration for [IdeaVim plugin](https://lp.jetbrains.com/ideavim/)https://lp.jetbrains.com/ideavim/
 
