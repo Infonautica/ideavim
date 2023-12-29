@@ -18,4 +18,4 @@ In your InteliJ product:
   - [Which-Key](https://plugins.jetbrains.com/plugin/15976-which-key)
   - [IdeaVim-EasyMotion](https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion)
   - [AceJump](https://plugins.jetbrains.com/plugin/7086-acejump)
-  - Copy the content of .ideavimrc from this repo to you .ideavimrc (it's located in ~/.ideavimrc and can be created using IdeaVim plugin UI)
+- Copy the content of .ideavimrc from this repo to you .ideavimrc (it's located in ~/.ideavimrc and can be created using IdeaVim plugin UI)
