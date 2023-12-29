@@ -118,6 +118,10 @@ let g:WhichKeyDesc_jump_to_backwards = "<leader>jb Jump To Backwards"
 nmap <leader>jf <Plug>(easymotion-f)
 let g:WhichKeyDesc_jump_to_forward = "<leader>jf Jump To Forward"
 
+nmap <leader>jn <Action>(ShowNavBar)
+let g:WhichKeyDesc_jump_to_navigation = "<leader>jn Jump To Navigation"
+
+
 
 " Git commands
 let g:WhichKeyDesc_git = "<leader>g Git"
