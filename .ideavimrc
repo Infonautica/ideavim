@@ -1,13 +1,9 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-" Source your .vimrc
 source ~/.vimrc
 
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
+"" -- Defaults --
 set scrolloff=5
 set scroll=7
 set relativenumber
@@ -39,10 +35,6 @@ nmap <C-=> <Action>(Unsplit)
 nmap <C-m> <Action>(MoveEditorToOppositeTabGroup)
 
 " Navigate splits
-sethandler <C-Left> a:vim
-sethandler <C-Right> a:vim
-sethandler <C-Up> a:vim
-sethandler <C-Down> a:vim
 nnoremap <C-Left> <C-W>h
 nnoremap <C-Right> <C-W>l
 nnoremap <C-Up> <C-W>k
@@ -52,26 +44,8 @@ nnoremap <C-Down> <C-W>j
 nmap <TAB> :action NextTab<CR>
 nmap <A-TAB> :action PreviousTab<CR>
 
-" Forward/Backward navigation
-sethandler <C-o> a:vim
-sethandler <C-i> a:vim
-
 " Zen mode
 nmap <C-z> <Action>(ToggleDistractionFreeMode)
-
-" Toggle Terminal
-" map <C-t> <Action>(ActivateTerminalToolWindow)
-
-" system clipboard
-" vmap <leader>yiw "+yiw
-" nmap <leader>yiw "+yiw
-" vmap <leader>y "+y
-" vmap <leader>d "_d
-" nmap <leader>y "+yy
-" nmap <leader>p "+p
-" nmap <leader>P "+P
-" vmap <leader>p "+p
-" vmap <leader>P "+P
 
 
 
@@ -135,12 +109,20 @@ let g:WhichKeyDesc_git_diff = "<leader>gd Git Diff"
 nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 let g:WhichKeyDesc_git_reset = "<leader>gr Git Reset"
 
+nmap <leader>gb <Action>(Annotate)
+let g:WhichKeyDesc_git_blame = "<leader>gb Git Blame"
+
+
 
 " Close commands
 let g:WhichKeyDesc_close = "<leader>x Close"
 
 nmap <leader>xn <Action>(CloseAllNotifications)
 let g:WhichKeyDesc_close_notifications = "<leader>xn Close Notifications"
+
+nmap <leader>xt <Action>(HideActiveWindow)
+let g:WhichKeyDesc_close_tool = "<leader>xt Close Tool"
+
 
 
 " LSP commands
