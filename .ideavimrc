@@ -1,5 +1,3 @@
-"
-"   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
@@ -11,30 +9,18 @@ source ~/.vimrc
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
-
-" Show relative numbers
+set scroll=7
 set relativenumber
-
-" Do incremental searching.
 set incsearch
 
 " Enable which-key plugin
 set which-key
 set timeoutlen=60000
 
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
-Plug 'machakann/vim-highlightedyank'
-
-" Commentary plugin
-Plug 'tpope/vim-commentary'
-
-" Easy Motions
-Plug 'easymotion/vim-easymotion'
+Plug 'machakann/vim-highlightedyank' " Highlight copied text
+Plug 'tpope/vim-commentary' " Commentary plugin
+Plug 'easymotion/vim-easymotion' " Easy Motions
 
 
 
@@ -63,8 +49,12 @@ nnoremap <C-Up> <C-W>k
 nnoremap <C-Down> <C-W>j
 
 " Navigate tabs (opened files)
-nnoremap <TAB> :action NextTab<CR>
-nnoremap <A-TAB> :action PreviousTab<CR>
+nmap <TAB> :action NextTab<CR>
+nmap <A-TAB> :action PreviousTab<CR>
+
+" Forward/Backward navigation
+sethandler <C-o> a:vim
+sethandler <C-i> a:vim
 
 " Zen mode
 nmap <C-z> <Action>(ToggleDistractionFreeMode)
@@ -147,3 +137,15 @@ let g:WhichKeyDesc_close = "<leader>x Close"
 
 nmap <leader>xn <Action>(CloseAllNotifications)
 let g:WhichKeyDesc_close_notifications = "<leader>xn Close Notifications"
+
+
+" LSP commands
+let g:WhichKeyDesc_lsp = "<leader>l LSP"
+
+nmap <leader>ld <Action>(ShowErrorDescription)
+let g:WhichKeyDesc_lsp_show_error = "<leader>ld Show Error"
+
+nmap <leader>lD <Action>(ActivateProblemsViewToolWindow)
+let g:WhichKeyDesc_lsp_show_all_errors = "<leader>lD Show All Errors"
+
+
