@@ -41,8 +41,9 @@ nnoremap <C-Up> <C-W>k
 nnoremap <C-Down> <C-W>j
 
 " Navigate tabs (opened files)
-nmap <TAB> :action NextTab<CR>
-nmap <A-TAB> :action PreviousTab<CR>
+nmap <TAB> <Action>(NextSplitter)
+" nmap <A-TAB> :action PreviousTab<CR>
+" nmap <TAB> :action NextTab<CR>
 
 " Zen mode
 nmap <C-z> <Action>(ToggleDistractionFreeMode)
@@ -135,3 +136,12 @@ nmap <leader>lD <Action>(ActivateProblemsViewToolWindow)
 let g:WhichKeyDesc_lsp_show_all_errors = "<leader>lD Show All Errors"
 
 
+
+" Debugger commands
+let g:WhichKeyDesc_debug = "<leader>d Debugger"
+
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+let g:WhichKeyDesc_debug_toggle_breakpoint = "<leader>db Toggle Break Point"
+
+nmap <leader>dr <Action>(Run)
+let g:WhichKeyDesc_debug_run = "<leader>dr Run"
