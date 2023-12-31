@@ -8,6 +8,7 @@ set scrolloff=5
 set scroll=7
 set relativenumber
 set incsearch
+set clipboard+=unnamed
 
 " Enable which-key plugin
 set which-key
@@ -17,7 +18,6 @@ set timeoutlen=60000
 Plug 'machakann/vim-highlightedyank' " Highlight copied text
 Plug 'tpope/vim-commentary' " Commentary plugin
 Plug 'easymotion/vim-easymotion' " Easy Motions
-
 
 
 
